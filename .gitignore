@@ -1,0 +1,10 @@
+config.ini
+/venv
+/migrations
+/migrations-heroku
+alembic.ini
+login_cred.txt
+/__pycache__
+/.idea
+chromedriver.exe
+*.pyc
