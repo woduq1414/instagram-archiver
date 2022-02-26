@@ -44,7 +44,12 @@ def get_stories(user_id=None, nickname=None, highlight_id=None):
                 )
 
     data = json.loads(res.text)
-    stories = data["reels"][reel_id]["items"]
+
+    try:
+        stories = data["reels"][reel_id]["items"]
+    except:
+        return
+
     for story in stories:
 
         timestamp = story["taken_at"]
