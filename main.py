@@ -10,9 +10,9 @@ app = FastAPI()
 @app.on_event('startup')
 def init_data():
     scheduler = BackgroundScheduler(timezone='Asia/Seoul')
-    scheduler.add_job(insta_crawl_job, 'cron', minute='*/30')
-    scheduler.start()
-
+    # scheduler.add_job(insta_crawl_job, 'cron', minute='*/30')
+    # scheduler.start()
+    insta_crawl_job()
 
 @app.get("/")
 async def root():
