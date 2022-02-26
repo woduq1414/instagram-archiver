@@ -35,6 +35,8 @@ def login():
     response = requests.get(link)
     csrf = response.cookies['csrftoken']
 
+    print(csrf, INSTA_ACCOUNT)
+
     payload = {
         'username': INSTA_ACCOUNT["id"],
         'enc_password': f'#PWD_INSTAGRAM_BROWSER:0:{time}:{INSTA_ACCOUNT["pw"]}',
