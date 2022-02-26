@@ -29,7 +29,7 @@ CLOUDINARY_CRED = {
 CLOUDINARY_DIRECTORY = config["CLOUDINARY_DIRECTORY"]
 
 
-DB_URL = config["DATABASE_URL"]
+DB_URL = config["DATABASE_URL"].replace("postgres://", "postgresql://")
 
 TARGET_PAGE_LIST = [x for x in re.split(r'\s+', config["TARGET_PAGE_LIST"]) if x[0] != "#"]
 
