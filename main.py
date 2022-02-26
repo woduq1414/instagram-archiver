@@ -1,7 +1,17 @@
 import uvicorn
 from fastapi import FastAPI
+from apscheduler.schedulers.background import BackgroundScheduler
+
+from crawl.run import insta_crawl_job
 
 app = FastAPI()
+
+
+@app.on_event('startup')
+def init_data():
+    scheduler = BackgroundScheduler(timezone='Asia/Seoul')
+    scheduler.add_job(insta_crawl_job, 'cron', minute='*/30')
+    scheduler.start()
 
 
 @app.get("/")

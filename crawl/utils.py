@@ -24,3 +24,8 @@ def get_media_io(url):
 def get_random_string(size):
     chars = string.ascii_lowercase+string.ascii_uppercase+string.digits
     return ''.join(random.choice(chars) for _ in range(size))
+
+
+#
+# def crawl_log(type, ):
+#     pass

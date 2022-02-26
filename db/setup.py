@@ -6,7 +6,7 @@ from sqlalchemy.orm import sessionmaker, scoped_session
 from config import DB_URL
 
 
-engine = create_engine(DB_URL, echo=True)
+engine = create_engine(DB_URL, echo=False)
 Session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine))
 session = Session()
 

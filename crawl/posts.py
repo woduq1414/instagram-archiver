@@ -22,7 +22,7 @@ def get_posts(user_id = None, nickname = None):
                                                       backoff_factor=0.5, )))
 
 
-    print(nickname)
+
 
 
     end_cursor = ""
@@ -55,7 +55,7 @@ def get_posts(user_id = None, nickname = None):
             post_id = post_data["id"]
 
             if post_id in post_id_list:
-                print(post_id, "exist")
+
                 continue
 
             thumbnail_url = post_data["thumbnail_src"]
@@ -121,8 +121,7 @@ def get_posts(user_id = None, nickname = None):
                 new_media_row_list.append(new_media_row)
 
             # print(media_list)
-            print(text)
-            print("/////////////////////")
+
 
         session.add_all(new_post_row_list)
         session.commit()
