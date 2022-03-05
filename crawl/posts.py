@@ -108,7 +108,7 @@ def get_posts(user_id = None, nickname = None):
 
                 else:
                     upload_result = cloudinary.uploader.upload_large(get_media_io(media["url"]), resource_type = "video",
-                                                                     public_id=f"{CLOUDINARY_DIRECTORY}/{nickname}/posts/{media_filename}.mp4")
+                                                                     public_id=f"{CLOUDINARY_DIRECTORY}/{nickname}/posts/{media_filename}")
 
                 new_media_url = upload_result["secure_url"]
 

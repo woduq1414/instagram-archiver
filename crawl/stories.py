@@ -71,7 +71,7 @@ def get_stories(user_id=None, nickname=None, highlight_id=None):
             video_url = story["video_versions"][0]["url"]
             media_filename = f"{nickname}_{id}_{get_random_string(6)}"
             upload_result = cloudinary.uploader.upload_large(get_media_io(video_url), resource_type="video",
-                                                             public_id=f"{CLOUDINARY_DIRECTORY}/{nickname}/stories/{media_filename}.mp4")
+                                                             public_id=f"{CLOUDINARY_DIRECTORY}/{nickname}/stories/{media_filename}")
             new_video_url = upload_result["secure_url"]
         else:
             type = "image"

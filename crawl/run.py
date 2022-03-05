@@ -18,7 +18,7 @@ def insta_crawl_job():
         if user_id is None:
             continue
 
-        # get_posts(user_id = user_id, nickname=nickname)
+        get_posts(user_id = user_id, nickname=nickname)
 
         highlight_id_list = get_highlights(user_id=user_id, nickname=nickname)
         get_stories(user_id = user_id, nickname=nickname)
