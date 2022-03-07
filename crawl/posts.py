@@ -54,6 +54,8 @@ def get_posts(user_id = None, nickname = None):
             post_data = edge["node"]
             post_id = post_data["id"]
 
+            print(nickname, post_id)
+
             if post_id in post_id_list:
 
                 continue
@@ -73,7 +75,13 @@ def get_posts(user_id = None, nickname = None):
                 else:
                     media_list.append({"type": "image", "url": node["display_url"]})
 
-            text = post_data["edge_media_to_caption"]["edges"][0]["node"]["text"]
+
+            try:
+                text = post_data["edge_media_to_caption"]["edges"][0]["node"]["text"]
+            except:
+                print(post_data["edge_media_to_caption"]["edges"], post_id, nickname, "err")
+                text = ""
+
             timestamp = post_data["taken_at_timestamp"]
 
             shortcode = post_data["shortcode"]
