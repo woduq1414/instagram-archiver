@@ -19,7 +19,7 @@ def login():
         f = open("./login_cred.txt", 'r')
         data = json.loads(f.read())
 
-        if datetime.datetime.now().timestamp() - data["timestamp"] >= 60 * 60 * 24:
+        if datetime.datetime.now().timestamp() - data["timestamp"] >= 60 * 60 * 24 * 5:
             is_file_exist = False
         else:
             Cache().INSTA_COOKIES = data["cookies"]
